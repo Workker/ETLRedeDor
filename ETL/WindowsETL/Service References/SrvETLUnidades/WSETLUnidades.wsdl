@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="RetornarUnidades">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetornarUnidadesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornarUnidadesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApagarPacientesSatelite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_sUnidade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApagarPacientesSateliteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ApagarAtendimentosSatelite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_sUnidade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApagarAtendimentosSateliteResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetornarUnidadesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornarUnidades" />
+  </wsdl:message>
+  <wsdl:message name="RetornarUnidadesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornarUnidadesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApagarPacientesSateliteSoapIn">
+    <wsdl:part name="parameters" element="tns:ApagarPacientesSatelite" />
+  </wsdl:message>
+  <wsdl:message name="ApagarPacientesSateliteSoapOut">
+    <wsdl:part name="parameters" element="tns:ApagarPacientesSateliteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApagarAtendimentosSateliteSoapIn">
+    <wsdl:part name="parameters" element="tns:ApagarAtendimentosSatelite" />
+  </wsdl:message>
+  <wsdl:message name="ApagarAtendimentosSateliteSoapOut">
+    <wsdl:part name="parameters" element="tns:ApagarAtendimentosSateliteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSETLUnidadesSoap">
+    <wsdl:operation name="RetornarUnidades">
+      <wsdl:input message="tns:RetornarUnidadesSoapIn" />
+      <wsdl:output message="tns:RetornarUnidadesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApagarPacientesSatelite">
+      <wsdl:input message="tns:ApagarPacientesSateliteSoapIn" />
+      <wsdl:output message="tns:ApagarPacientesSateliteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApagarAtendimentosSatelite">
+      <wsdl:input message="tns:ApagarAtendimentosSateliteSoapIn" />
+      <wsdl:output message="tns:ApagarAtendimentosSateliteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSETLUnidadesSoap" type="tns:WSETLUnidadesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetornarUnidades">
+      <soap:operation soapAction="http://microsoft.com/webservices/RetornarUnidades" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApagarPacientesSatelite">
+      <soap:operation soapAction="http://microsoft.com/webservices/ApagarPacientesSatelite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApagarAtendimentosSatelite">
+      <soap:operation soapAction="http://microsoft.com/webservices/ApagarAtendimentosSatelite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSETLUnidadesSoap12" type="tns:WSETLUnidadesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetornarUnidades">
+      <soap12:operation soapAction="http://microsoft.com/webservices/RetornarUnidades" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApagarPacientesSatelite">
+      <soap12:operation soapAction="http://microsoft.com/webservices/ApagarPacientesSatelite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApagarAtendimentosSatelite">
+      <soap12:operation soapAction="http://microsoft.com/webservices/ApagarAtendimentosSatelite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSETLUnidades">
+    <wsdl:port name="WSETLUnidadesSoap" binding="tns:WSETLUnidadesSoap">
+      <soap:address location="http://localhost:29631/WSETLUnidades.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSETLUnidadesSoap12" binding="tns:WSETLUnidadesSoap12">
+      <soap12:address location="http://localhost:29631/WSETLUnidades.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="RetornarUltimoRegistro">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str_Unidade" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarUltimoRegistroResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornarUltimoRegistroResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarPacientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="str_Unidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UltimoRegistro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="NumeroLinhas" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetornarPacientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetornarPacientesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarPacientes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="m_strUnidade" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="m_oDsDados">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GravarPacientesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GravarPacientesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RetornarUltimoRegistroSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornarUltimoRegistro" />
+  </wsdl:message>
+  <wsdl:message name="RetornarUltimoRegistroSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornarUltimoRegistroResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetornarPacientesSoapIn">
+    <wsdl:part name="parameters" element="tns:RetornarPacientes" />
+  </wsdl:message>
+  <wsdl:message name="RetornarPacientesSoapOut">
+    <wsdl:part name="parameters" element="tns:RetornarPacientesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GravarPacientesSoapIn">
+    <wsdl:part name="parameters" element="tns:GravarPacientes" />
+  </wsdl:message>
+  <wsdl:message name="GravarPacientesSoapOut">
+    <wsdl:part name="parameters" element="tns:GravarPacientesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSGravarPacientesSoap">
+    <wsdl:operation name="RetornarUltimoRegistro">
+      <wsdl:input message="tns:RetornarUltimoRegistroSoapIn" />
+      <wsdl:output message="tns:RetornarUltimoRegistroSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetornarPacientes">
+      <wsdl:input message="tns:RetornarPacientesSoapIn" />
+      <wsdl:output message="tns:RetornarPacientesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GravarPacientes">
+      <wsdl:input message="tns:GravarPacientesSoapIn" />
+      <wsdl:output message="tns:GravarPacientesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSGravarPacientesSoap" type="tns:WSGravarPacientesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetornarUltimoRegistro">
+      <soap:operation soapAction="http://microsoft.com/webservices/RetornarUltimoRegistro" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarPacientes">
+      <soap:operation soapAction="http://microsoft.com/webservices/RetornarPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarPacientes">
+      <soap:operation soapAction="http://microsoft.com/webservices/GravarPacientes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSGravarPacientesSoap12" type="tns:WSGravarPacientesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RetornarUltimoRegistro">
+      <soap12:operation soapAction="http://microsoft.com/webservices/RetornarUltimoRegistro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetornarPacientes">
+      <soap12:operation soapAction="http://microsoft.com/webservices/RetornarPacientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GravarPacientes">
+      <soap12:operation soapAction="http://microsoft.com/webservices/GravarPacientes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSGravarPacientes">
+    <wsdl:port name="WSGravarPacientesSoap" binding="tns:WSGravarPacientesSoap">
+      <soap:address location="http://localhost:11077/WSGravarPacientes.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSGravarPacientesSoap12" binding="tns:WSGravarPacientesSoap12">
+      <soap12:address location="http://localhost:11077/WSGravarPacientes.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

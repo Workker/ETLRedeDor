@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="\\10.250.0.132\wwwroot\WSGravarAtendimentos" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="WSGravarAtendimento.asmx" publishTime="11/30/2011 14:51:21" />
+    <file relUrl="bin/WSGravarAtendimento.pdb" publishTime="05/07/2012 15:53:57" />
+    <file relUrl="bin/WSGravarAtendimento.dll" publishTime="05/07/2012 15:53:58" />
+    <file relUrl="Web.config" publishTime="05/07/2012 15:54:02" />
+    <file relUrl="bin/AcessoDados.dll" publishTime="05/07/2012 15:53:37" />
+    <file relUrl="bin/AcessoDados.pdb" publishTime="05/07/2012 15:53:36" />
+  </publishProfile>
+</publishData>
