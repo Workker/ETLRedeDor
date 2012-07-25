@@ -44,7 +44,7 @@ namespace WSGravarAtendimento
             StringBuilder sbSQL = new System.Text.StringBuilder();
 
             sbSQL.Length = 0;
-            sbSQL.Append("SELECT RTRIM(SUBSTR(CLATND,10,10)) AS ULTIMOVALOR FROM (SELECT CLATND FROM #0.TBDWD018 WHERE SUBSTR(CLATND,1,3) = '#1' ORDER BY DTCARG DESC, CLATND DESC) WHERE ROWNUM = 1");
+            sbSQL.Append("SELECT RTRIM(SUBSTR(CLATND,10,10)) AS ULTIMOVALOR FROM (SELECT CLATND FROM #0.TBDWD018 WHERE SUBSTR(CLATND,1,3) = '#1' ) ");
 
             sbSQL.Replace("#0", strScheINT);
             sbSQL.Replace("#1", str_Unidade.ToUpper());
@@ -199,7 +199,7 @@ namespace WSGravarAtendimento
 
                         sbSQL.Replace("#0", strScheINT);
 
-                        Int32 RetornoLinhas = m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ATENDIMENTO", strConnINT);
+                        Int32 RetornoLinhas =Convert.ToInt32( m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ATENDIMENTO", strConnINT));
 
                         if (RetornoLinhas > 0)
                         {

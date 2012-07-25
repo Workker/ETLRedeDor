@@ -447,7 +447,8 @@ namespace WSGravarPacientes
 
                         sbSQL.Replace("#0", strScheINT);
 
-                        RetornoLinhas = m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "TBDWD004", strConnINT);
+                       
+                        RetornoLinhas =Convert.ToInt32( m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "TBDWD004", strConnINT));
 
                         if (RetornoLinhas > 0)
                         {

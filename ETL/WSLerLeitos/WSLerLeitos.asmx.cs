@@ -6,7 +6,7 @@ using System.Web;
 using System.Web.Services;
 using System.Configuration;
 using System.Text;
-using AcessoDados; 
+using AcessoDados;
 
 namespace WSLerLeitos
 {
@@ -44,9 +44,11 @@ namespace WSLerLeitos
 
             sbSQL.Replace("#0", strSche);
 
-            Ds = m_oRP.RetornarDataSet(sbSQL.ToString(), "FALEICAD", strConn);
+            Engine engine = new Engine(strConn);
+            var ds = engine.RetornarDataSet(sbSQL.ToString(), "FALEICAD");
+            //Ds = m_oRP.RetornarDataSet(sbSQL.ToString(), "FALEICAD", strConn);
 
-            return Ds;
+            return ds;
         }
 
     }

@@ -125,7 +125,7 @@ namespace WindowsETL.Passos
 
                     sbSQL.Replace("#0", StrSchema);  
 
-                    Int32 LinhasRetorno = m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ATENDIMENTO", StrConexao);
+                    Int32 LinhasRetorno =Convert.ToInt32( m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ATENDIMENTO", StrConexao));
 
                     if (LinhasRetorno > 0)
                     {

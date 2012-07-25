@@ -27,44 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSGravarPacientes", "WSGrav
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSETLUnidades", "WsETLUnidades\WSETLUnidades.csproj", "{198B7A48-5953-41CC-A61C-C181E4E64DF7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.Test", "ETL.Test\ETL.Test.csproj", "{EA2FA446-219A-4250-ACF5-F63B97D41114}"
+EndProject
 Global
-	GlobalSection(SourceCodeControl) = preSolution
-		SccNumberOfProjects = 12
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = AcessoDados\\AcessoDados.csproj
-		SccLocalPath1 = .
-		SccProjectFilePathRelativizedFromConnection1 = AcessoDados\\
-		SccProjectUniqueName2 = WSLerMedicos\\WSLerMedicos.csproj
-		SccLocalPath2 = .
-		SccProjectFilePathRelativizedFromConnection2 = WSLerMedicos\\
-		SccProjectUniqueName3 = WSLerPacientes\\WSLerPacientes.csproj
-		SccLocalPath3 = .
-		SccProjectFilePathRelativizedFromConnection3 = WSLerPacientes\\
-		SccProjectUniqueName4 = WSLerAtendimentos\\WSLerAtendimentos.csproj
-		SccLocalPath4 = .
-		SccProjectFilePathRelativizedFromConnection4 = WSLerAtendimentos\\
-		SccProjectUniqueName5 = WSLerEspecialidades\\WSLerEspecialidades.csproj
-		SccLocalPath5 = .
-		SccProjectFilePathRelativizedFromConnection5 = WSLerEspecialidades\\
-		SccProjectUniqueName6 = WSLerLeitos\\WSLerLeitos.csproj
-		SccLocalPath6 = .
-		SccProjectFilePathRelativizedFromConnection6 = WSLerLeitos\\
-		SccProjectUniqueName7 = WSLerMedicoEspecialidade\\WSLerMedicoEspecialidade.csproj
-		SccLocalPath7 = .
-		SccProjectFilePathRelativizedFromConnection7 = WSLerMedicoEspecialidade\\
-		SccProjectUniqueName8 = WSGravarAtendimento\\WSGravarAtendimento.csproj
-		SccLocalPath8 = .
-		SccProjectFilePathRelativizedFromConnection8 = WSGravarAtendimento\\
-		SccProjectUniqueName9 = WindowsETL\\WindowsETL.csproj
-		SccLocalPath9 = .
-		SccProjectFilePathRelativizedFromConnection9 = WindowsETL\\
-		SccProjectUniqueName10 = WSGravarPacientes\\WSGravarPacientes.csproj
-		SccLocalPath10 = .
-		SccProjectFilePathRelativizedFromConnection10 = WSGravarPacientes\\
-		SccProjectUniqueName11 = WsETLUnidades\\WSETLUnidades.csproj
-		SccLocalPath11 = .
-		SccProjectFilePathRelativizedFromConnection11 = WsETLUnidades\\
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -192,6 +157,16 @@ Global
 		{198B7A48-5953-41CC-A61C-C181E4E64DF7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{198B7A48-5953-41CC-A61C-C181E4E64DF7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{198B7A48-5953-41CC-A61C-C181E4E64DF7}.Release|x86.ActiveCfg = Release|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EA2FA446-219A-4250-ACF5-F63B97D41114}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

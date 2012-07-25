@@ -91,7 +91,7 @@ namespace WsETLUnidades
                 sbSQL.Replace("#0", strScheSAT);
                 sbSQL.Replace("#1", strScheINT);
                 sbSQL.Replace("#2", m_sUnidade);
-                Retorno = m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT);
+                Retorno =Convert.ToInt32( m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT));
 
             }
             catch (Exception ex)
@@ -124,7 +124,7 @@ namespace WsETLUnidades
                 sbSQL.Replace("#0", strScheSAT);
                 sbSQL.Replace("#1", strScheINT);
                 sbSQL.Replace("#2", m_sUnidade);
-                Retorno = m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT);
+                Retorno =Convert.ToInt32( m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT));
 
             }
             catch (Exception ex)

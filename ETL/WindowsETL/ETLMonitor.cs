@@ -10,6 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using WindowsETL.SrvETLUnidades;
 using WindowsETL.Passos;
+using AcessoDados;
 
 namespace WindowsETL
 {
@@ -106,6 +107,7 @@ namespace WindowsETL
 
         private void btnProcessar_Click(object sender, EventArgs e)
         {
+           
             if (btnProcessar.Text.Trim() == "Iniciar ETL")
             {
                 //Texto.Text = Texto.Text + string.Format("{0:G}",DateTime.Now.ToString()) + " - ETL - em Execução... \r\n";
@@ -142,6 +144,7 @@ namespace WindowsETL
 
         private void Inicio()
         {
+
             bool OcorreuError = false;
 
             string m_sUnidade = string.Empty;
@@ -790,6 +793,11 @@ namespace WindowsETL
         private void sairToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ListaProcesso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
