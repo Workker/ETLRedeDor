@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="BEA92944-BBEE-4987-AD2A-848A25A7CA8A" ModuleId="WSGravarAtendimento" />
+  <Module PersistentId="CDFCFB59-B19D-4BF0-9A1C-E47783AC3E74" ModuleId="AcessoDados" />
+  <Module PersistentId="99E7301C-B348-4B66-BB0A-D19E56E0130C" ModuleId="WSLerEspecialidades" />
+</Modules>
