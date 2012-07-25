@@ -44,7 +44,7 @@ namespace WSLerLeitos
 
             sbSQL.Replace("#0", strSche);
 
-            Engine engine = new Engine(strConn);
+            Engine engine = new Engine(strConn, Banco.SQLSERVER);
             var ds = engine.RetornarDataSet(sbSQL.ToString(), "FALEICAD");
             //Ds = m_oRP.RetornarDataSet(sbSQL.ToString(), "FALEICAD", strConn);
 
