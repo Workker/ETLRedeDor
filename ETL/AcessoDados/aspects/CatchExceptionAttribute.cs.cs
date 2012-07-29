@@ -40,7 +40,11 @@ namespace AcessoDados
             args.Exception =
                 new BusinessException(string.Format("{0} {1} ",
                                                       guid, args.Exception.Message), args.Exception.InnerException);
-            args.FlowBehavior = FlowBehavior.ThrowException;
+
+            args.FlowBehavior = FlowBehavior.Continue;
+
+
+            throw args.Exception;
         }
     }
 }

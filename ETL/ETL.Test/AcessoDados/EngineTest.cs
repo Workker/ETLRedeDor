@@ -5,7 +5,7 @@ using System.Text;
 using NUnit.Framework;
 using AcessoDados;
 
-namespace ETL.Test.AcessoDados
+namespace ETL.Test
 {
     [TestFixture]
     public class EngineTest : TesteBase
