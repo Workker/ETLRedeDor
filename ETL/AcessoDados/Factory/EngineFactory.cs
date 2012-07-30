@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
-using Oracle.DataAccess.Client;
+
 
 namespace AcessoDados
 {
@@ -45,7 +45,8 @@ namespace AcessoDados
                     dbConnection = new SqlConnection(connectionString);
                     break;
                 case Banco.ORACLE:
-                    dbConnection = new OracleConnection(connectionString);
+                   // dbConnection = new OracleConnection(connectionString);
+                    dbConnection = new SqlConnection(connectionString);
                     break;
                 default:
                     break;
@@ -68,7 +69,8 @@ namespace AcessoDados
                     dbCommand = new SqlCommand();
                     break;
                 case Banco.ORACLE:
-                    dbCommand = new OracleCommand();
+                    //dbCommand = new OracleCommand();
+                    dbCommand = new SqlCommand();
                     break;
                 default:
                     break;
@@ -95,7 +97,8 @@ namespace AcessoDados
                     dbParameter = new SqlParameter(nomeParameter, dbType);
                     break;
                 case Banco.ORACLE:
-                    dbParameter = new OracleParameter(nomeParameter, dbType);
+                    //dbParameter = new OracleParameter(nomeParameter, dbType);
+                    dbParameter = new SqlParameter(nomeParameter, dbType);
                     break;
                 default:
                     break;
@@ -113,7 +116,8 @@ namespace AcessoDados
                     dbAdapter = new SqlDataAdapter(xQuery,(SqlConnection) dbConnection);
                     break;
                 case Banco.ORACLE:
-                    dbAdapter = new OracleDataAdapter(xQuery, (OracleConnection)dbConnection);
+                    //dbAdapter = new OracleDataAdapter(xQuery, (OracleConnection)dbConnection);
+                    dbAdapter = new SqlDataAdapter(xQuery, (SqlConnection)dbConnection);
                     break;
                 default:
                     break;
@@ -147,7 +151,8 @@ namespace AcessoDados
                     dbParameter = new SqlParameter(nomeParameter, dbType);
                     break;
                 case Banco.ORACLE:
-                    dbParameter = new OracleParameter(nomeParameter, dbType);
+                    //dbParameter = new OracleParameter(nomeParameter, dbType);
+                    dbParameter = new SqlParameter(nomeParameter, dbType);
                     break;
                 default:
                     break;

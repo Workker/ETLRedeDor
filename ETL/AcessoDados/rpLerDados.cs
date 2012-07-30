@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.OleDb;
 
 using System.Data.SqlClient;
-using Oracle.DataAccess.Client;    
+    
  
 namespace AcessoDados
 {
@@ -35,18 +35,18 @@ namespace AcessoDados
         {
             Int32 RetornoLinhas = 0;
 
-            OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));
-            OracleCommand Cmd = new OracleCommand();
+            //OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));
+            //OracleCommand Cmd = new OracleCommand();
 
-            DB.Open();
+            //DB.Open();
 
-            Cmd.Connection = DB;
-            Cmd.CommandText = xQuery;
+            //Cmd.Connection = DB;
+            //Cmd.CommandText = xQuery;
 
-            RetornoLinhas = Cmd.ExecuteNonQuery();
+            //RetornoLinhas = Cmd.ExecuteNonQuery();
 
-            DB.Close();
-            DB.Dispose();
+            //DB.Close();
+            //DB.Dispose();
 
             return RetornoLinhas;
         }

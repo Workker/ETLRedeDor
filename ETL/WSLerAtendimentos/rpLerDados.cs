@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
-using Oracle.DataAccess.Client;
+
 
 namespace WSLerAtendimentos
 {
@@ -16,32 +16,32 @@ namespace WSLerAtendimentos
         {
             DataSet xDs = new DataSet("DS_"+NomeTabela); 
 
-            OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));       
-            OracleDataAdapter dtAdp = new OracleDataAdapter(xQuery, DB);
-            dtAdp.Fill(xDs, NomeTabela);   
+            //OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));       
+            //OracleDataAdapter dtAdp = new OracleDataAdapter(xQuery, DB);
+            //dtAdp.Fill(xDs, NomeTabela);   
 
-            DB.Close();
-            DB.Dispose();
+            //DB.Close();
+            //DB.Dispose();
 
-            dtAdp.Dispose();
+            //dtAdp.Dispose();
 
             return xDs;
         }
 
         public Boolean ExecutarComandoSQL(string xQuery, string NomeTabela, string ConexaoOracle)
         {
-            OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));
-            OracleCommand Cmd = new OracleCommand(); 
+            //OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));
+            //OracleCommand Cmd = new OracleCommand(); 
 
-            DB.Open();
+            //DB.Open();
 
-            Cmd.Connection = DB;
-            Cmd.CommandText = xQuery;
+            //Cmd.Connection = DB;
+            //Cmd.CommandText = xQuery;
 
-            Cmd.ExecuteNonQuery();
+            //Cmd.ExecuteNonQuery();
 
-            DB.Close();
-            DB.Dispose();
+            //DB.Close();
+            //DB.Dispose();
 
             return true;
         }
@@ -50,24 +50,24 @@ namespace WSLerAtendimentos
         {
             string Resposta = "0";
 
-            OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));
-            OracleCommand Cmd = new OracleCommand();
-            OracleDataReader Dre;
-            DB.Open();
+            //OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));
+            //OracleCommand Cmd = new OracleCommand();
+            //OracleDataReader Dre;
+            //DB.Open();
 
-            Cmd.Connection = DB;
-            Cmd.CommandText = xQuery;
-            Dre = Cmd.ExecuteReader();
+            //Cmd.Connection = DB;
+            //Cmd.CommandText = xQuery;
+            //Dre = Cmd.ExecuteReader();
 
-            if (Dre.Read())
-            {
-                Resposta = Dre[0].ToString();
-            }
+            //if (Dre.Read())
+            //{
+            //    Resposta = Dre[0].ToString();
+            //}
 
-            //Resposta = Cmd.ExecuteScalar(); //ANTIGO
+            ////Resposta = Cmd.ExecuteScalar(); //ANTIGO
 
-            DB.Close();
-            DB.Dispose();
+            //DB.Close();
+            //DB.Dispose();
 
             return Resposta;
         }
