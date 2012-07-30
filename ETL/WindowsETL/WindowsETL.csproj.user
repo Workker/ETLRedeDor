@@ -11,4 +11,7 @@
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
     <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
+  <PropertyGroup>
+    <ReferencePath>D:\Projetos\Rede Dor\ETLRedeDor\ETL\WindowsETL\..\Lib\</ReferencePath>
+  </PropertyGroup>
 </Project>

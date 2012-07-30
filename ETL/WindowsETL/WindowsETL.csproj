@@ -94,10 +94,6 @@
     <ApplicationIcon>web_server.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AcessoDados, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\AcessoDados\bin\Debug\AcessoDados.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -262,7 +258,12 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\AcessoDados\AcessoDados.csproj">
+      <Project>{CDFCFB59-B19D-4BF0-9A1C-E47783AC3E74}</Project>
+      <Name>AcessoDados</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SrvGravarPacHBD\WSGravarPacientes.disco" />
   </ItemGroup>
