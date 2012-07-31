@@ -11,6 +11,7 @@ namespace ETL.Test.Servicos
     public class WSLerAtendimentosTest
     {
         [Test]
+        [Ignore]
         [ExpectedException(ExpectedException = typeof(BusinessException))]
         public void retornar_ultimo_registro_deve_retornar_execao()
         {
@@ -19,6 +20,7 @@ namespace ETL.Test.Servicos
         }
 
         [Test]
+        [Ignore]
         [ExpectedException(ExpectedException = typeof(BusinessException))]
         public void retornar_pacientes_deve_retornar_execao()
         {
@@ -27,6 +29,7 @@ namespace ETL.Test.Servicos
         }
 
         [Test]
+        [Ignore]
         [ExpectedException(ExpectedException = typeof(BusinessException))]
         public void retornar_conciliacao_pacientes_deve_retornar_execao()
         {
@@ -35,6 +38,7 @@ namespace ETL.Test.Servicos
         }
 
         [Test]
+        [Ignore]
         [ExpectedException(ExpectedException = typeof(BusinessException))]
         public void gravar_pacientes_deve_retornar_execao()
         {
