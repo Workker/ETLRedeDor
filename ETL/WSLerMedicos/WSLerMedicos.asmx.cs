@@ -31,6 +31,7 @@ namespace WSLerMedicos
         string strSche = ConfigurationManager.AppSettings["strSchema"].ToString();
 
         [WebMethod]
+        [CatchException]
         public DataSet RetornarMedicos(string UltimoRegistro, Int32 NumeroLinhas)
         {
             DataSet Ds;

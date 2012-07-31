@@ -15,13 +15,11 @@ namespace ETL.Test
         [Test]
         public void retornar_data_set_com_sucesso()
         {
-            Assert.Pass();
+            Engine engine = new Engine(str, Banco.SQLSERVER);
 
-            //Engine engine = new Engine(str, Banco.SQLSERVER);
+            var resultado = engine.RetornarDataSet("select * from TBDWD018", "TBDWD018");
 
-            //var resultado = engine.RetornarDataSet("select * from TBDWD018", "TBDWD018");
-
-            //Assert.NotNull(resultado);
+            Assert.NotNull(resultado);
         }
 
         [Test]

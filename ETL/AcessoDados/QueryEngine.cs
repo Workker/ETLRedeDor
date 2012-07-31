@@ -164,52 +164,52 @@ namespace AcessoDados
             return null;
         }
 
-        /// <summary>
-        /// Cria um parameter null para um criterio de consulta aonde o parametro é nulo
-        /// </summary>
-        /// <param name="sourceProperty">informações da propriedade</param>
-        /// <param name="parentClass">nome da classe da qual a propriedade pertence</param>
-        /// <returns></returns>
-        [CatchException]
-        public IDataParameter CreateNullParameter(PropertyInfo sourceProperty, string parentClass)
-        {
-            parameter = engineFactory.CriarParameter(string.Concat(parentClass, sourceProperty.Name), DBNull.Value);
-            parameter.Value = null;
-            return parameter;
+        ///// <summary>
+        ///// Cria um parameter null para um criterio de consulta aonde o parametro é nulo
+        ///// </summary>
+        ///// <param name="sourceProperty">informações da propriedade</param>
+        ///// <param name="parentClass">nome da classe da qual a propriedade pertence</param>
+        ///// <returns></returns>
+        //[CatchException]
+        //public IDataParameter CreateNullParameter(PropertyInfo sourceProperty, string parentClass)
+        //{
+        //    parameter = engineFactory.CriarParameter(string.Concat(parentClass, sourceProperty.Name), DBNull.Value);
+        //    parameter.Value = null;
+        //    return parameter;
         }
 
-        /// <summary>
-        /// executa a procedure com o critério
-        /// </summary>
-        /// <param name="procName">Nome da procedure</param>
-        /// <returns>IDataReader</returns>
-        [CatchException]
-        public IDataReader ExecuteQueryProcedure(string procName, object criterio)
-        {
-            try
-            {
-                //preenchendo os parameters
-                Fill(criterio);
-                return engine.ExecuteQueryProcedure(procName, listaParameter);
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-        }
+        ///// <summary>
+        ///// executa a procedure com o critério
+        ///// </summary>
+        ///// <param name="procName">Nome da procedure</param>
+        ///// <returns>IDataReader</returns>
+        //[CatchException]
+        //public IDataReader ExecuteQueryProcedure(string procName, object criterio)
+        //{
+        //    try
+        //    {
+        //        //preenchendo os parameters
+        //        Fill(criterio);
+        //        return engine.ExecuteQueryProcedure(procName, listaParameter);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return null;
+        //    }
+        //}
 
-        /// <summary>
-        /// executa a procedure com o critério
-        /// </summary>
-        /// <param name="procName">Nome da procedure</param>
-        /// <returns>Object</returns>
-        [CatchException]
-        public object ExecuteEscalarProcedure(string procName, object criterio)
-        {
-               //preenchendo os parameters
-                Fill(criterio);
-                return engine.ExecuteEscalarProcedure(procName, listaParameter);
+        ///// <summary>
+        ///// executa a procedure com o critério
+        ///// </summary>
+        ///// <param name="procName">Nome da procedure</param>
+        ///// <returns>Object</returns>
+        //[CatchException]
+        //public object ExecuteEscalarProcedure(string procName, object criterio)
+        //{
+        //       //preenchendo os parameters
+        //        Fill(criterio);
+        //        return engine.ExecuteEscalarProcedure(procName, listaParameter);
             
-        }
+        //}
     }
 }

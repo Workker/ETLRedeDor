@@ -259,12 +259,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AcessoDados\AcessoDados.csproj">
-      <Project>{CDFCFB59-B19D-4BF0-9A1C-E47783AC3E74}</Project>
-      <Name>AcessoDados</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Service References\SrvGravarPacHBD\WSGravarPacientes.disco" />
   </ItemGroup>
   <ItemGroup>
@@ -288,6 +282,12 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="web_server.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AcessoDados\AcessoDados.csproj">
+      <Project>{CDFCFB59-B19D-4BF0-9A1C-E47783AC3E74}</Project>
+      <Name>AcessoDados</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

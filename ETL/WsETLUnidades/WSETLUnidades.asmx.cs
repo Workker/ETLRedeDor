@@ -34,7 +34,9 @@ namespace WsETLUnidades
 
         string m_sUnidade = string.Empty;
 
+
         [WebMethod]
+        [CatchException]
         public DataSet RetornarUnidades()
         {
             DataSet Ds;
@@ -54,20 +56,15 @@ namespace WsETLUnidades
             sbSQL.Append("WHERE");
             sbSQL.Append("  ATIVO = 'A'");
 
-            try
-            {
-                sbSQL.Replace("#0", strScheINT);
-                Ds = m_oRP.RetornarDataSet(sbSQL.ToString(), "ETL", strConnINT);
+            sbSQL.Replace("#0", strScheINT);
+            Ds = m_oRP.RetornarDataSet(sbSQL.ToString(), "ETL", strConnINT);
 
-                return Ds;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            return Ds;
+
         }
 
         [WebMethod]
+        [CatchException]
         public void ApagarPacientesSatelite(string m_sUnidade)
         {
             int Retorno;
@@ -86,21 +83,14 @@ namespace WsETLUnidades
             sbSQL.Append(" AND ");
             sbSQL.Append(" DTCARG < '" + DateTime.Now.ToString("dd/MM/yyyy") + "'");
 
-            try
-            {
-                sbSQL.Replace("#0", strScheSAT);
-                sbSQL.Replace("#1", strScheINT);
-                sbSQL.Replace("#2", m_sUnidade);
-                Retorno =Convert.ToInt32( m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT));
-
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            sbSQL.Replace("#0", strScheSAT);
+            sbSQL.Replace("#1", strScheINT);
+            sbSQL.Replace("#2", m_sUnidade);
+            Retorno = Convert.ToInt32(m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT));
         }
 
         [WebMethod]
+        [CatchException]
         public void ApagarAtendimentosSatelite(string m_sUnidade)
         {
             int Retorno;
@@ -119,18 +109,11 @@ namespace WsETLUnidades
             sbSQL.Append(" AND ");
             sbSQL.Append(" DTCARG < '" + DateTime.Now.ToString("dd/MM/yyyy") + "'");
 
-            try
-            {
-                sbSQL.Replace("#0", strScheSAT);
-                sbSQL.Replace("#1", strScheINT);
-                sbSQL.Replace("#2", m_sUnidade);
-                Retorno =Convert.ToInt32( m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT));
+            sbSQL.Replace("#0", strScheSAT);
+            sbSQL.Replace("#1", strScheINT);
+            sbSQL.Replace("#2", m_sUnidade);
+            Retorno = Convert.ToInt32(m_oRP.ExecutarComandoSQL(sbSQL.ToString(), "ETL", strConnINT));
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
         }
     }
 }

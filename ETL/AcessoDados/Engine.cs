@@ -115,144 +115,144 @@ namespace AcessoDados
             return resposta;
         }
 
-        /// <summary>
-        /// Executa uma procedure do tipo query e retorna um IdataReader com as informações retornadas do banco
-        /// </summary>
-        /// <param name="procName">Nome da procedure</param>
-        /// <param name="paramCollection">Coleção de parametros</param>
-        /// <returns><see cref="Objeto">IDataReader</see></returns>
-        [CatchException]
-        public IDataReader ExecuteQueryProcedure(string procName, List<IDataParameter> paramCollection)
-        {
-            //Cria o comando na fabrica
-            CriarComando(procName, CommandType.StoredProcedure);
+        ///// <summary>
+        ///// Executa uma procedure do tipo query e retorna um IdataReader com as informações retornadas do banco
+        ///// </summary>
+        ///// <param name="procName">Nome da procedure</param>
+        ///// <param name="paramCollection">Coleção de parametros</param>
+        ///// <returns><see cref="Objeto">IDataReader</see></returns>
+        //[CatchException]
+        //public IDataReader ExecuteQueryProcedure(string procName, List<IDataParameter> paramCollection)
+        //{
+        //    //Cria o comando na fabrica
+        //    CriarComando(procName, CommandType.StoredProcedure);
 
-            //Varre a coleção de parametros e adiciona no comand
-            if (paramCollection != null)
-            {
-                for (int i = 0; i < paramCollection.Count; i++)
-                {
-                    dbCommand.Parameters.Add(paramCollection[i]);
-                }
-            }
-            //executa a procedure e retorna um IdataReader
-            return dbCommand.ExecuteReader(CommandBehavior.CloseConnection);
-        }
+        //    //Varre a coleção de parametros e adiciona no comand
+        //    if (paramCollection != null)
+        //    {
+        //        for (int i = 0; i < paramCollection.Count; i++)
+        //        {
+        //            dbCommand.Parameters.Add(paramCollection[i]);
+        //        }
+        //    }
+        //    //executa a procedure e retorna um IdataReader
+        //    return dbCommand.ExecuteReader(CommandBehavior.CloseConnection);
+        //}
 
-        /// <summary>
-        /// Executa uma procedure do tipo query e retorna um IdataReader com as informações retornadas do banco
-        /// </summary>
-        /// <param name="procName">Nome da procedure</param>
-        /// <param name="paramCollection">Coleção de parametros</param>
-        /// <returns><see cref="Objeto">IDataReader</see></returns>
-        [CatchException]
-        public IDataReader ExecuteQuery(string command, List<IDataParameter> paramCollection)
-        {
-            //Cria o comando na fabrica
-            CriarComando(command, CommandType.Text);
+        ///// <summary>
+        ///// Executa uma procedure do tipo query e retorna um IdataReader com as informações retornadas do banco
+        ///// </summary>
+        ///// <param name="procName">Nome da procedure</param>
+        ///// <param name="paramCollection">Coleção de parametros</param>
+        ///// <returns><see cref="Objeto">IDataReader</see></returns>
+        //[CatchException]
+        //public IDataReader ExecuteQuery(string command, List<IDataParameter> paramCollection)
+        //{
+        //    //Cria o comando na fabrica
+        //    CriarComando(command, CommandType.Text);
 
-            //Varre a coleção de parametros e adiciona no comand
-            if (paramCollection != null)
-            {
-                for (int i = 0; i < paramCollection.Count; i++)
-                {
-                    dbCommand.Parameters.Add(paramCollection[i]);
-                }
-            }
-            //executa a procedure e retorna um IdataReader
-            return dbCommand.ExecuteReader(CommandBehavior.CloseConnection);
-        }
+        //    //Varre a coleção de parametros e adiciona no comand
+        //    if (paramCollection != null)
+        //    {
+        //        for (int i = 0; i < paramCollection.Count; i++)
+        //        {
+        //            dbCommand.Parameters.Add(paramCollection[i]);
+        //        }
+        //    }
+        //    //executa a procedure e retorna um IdataReader
+        //    return dbCommand.ExecuteReader(CommandBehavior.CloseConnection);
+        //}
 
-        /// <summary>
-        /// Executa uma procedure do tipo query e retorna um IdataReader com as informações retornadas do banco
-        /// </summary>
-        /// <param name="procName">Nome da procedure</param>
-        /// <param name="paramCollection">Coleção de parametros</param>
-        /// <returns><see cref="Objeto">IDataReader</see></returns>
-        [CatchException]
-        public int ExecuteNonQuery(string command, List<IDataParameter> paramCollection)
-        {
-            try
-            {
-                //Cria o comando na fabrica
-                CriarComando(command, CommandType.Text);
+        ///// <summary>
+        ///// Executa uma procedure do tipo query e retorna um IdataReader com as informações retornadas do banco
+        ///// </summary>
+        ///// <param name="procName">Nome da procedure</param>
+        ///// <param name="paramCollection">Coleção de parametros</param>
+        ///// <returns><see cref="Objeto">IDataReader</see></returns>
+        //[CatchException]
+        //public int ExecuteNonQuery(string command, List<IDataParameter> paramCollection)
+        //{
+        //    try
+        //    {
+        //        //Cria o comando na fabrica
+        //        CriarComando(command, CommandType.Text);
 
-                //Varre a coleção de parametros e adiciona no comand
-                if (paramCollection != null)
-                {
-                    for (int i = 0; i < paramCollection.Count; i++)
-                    {
-                        dbCommand.Parameters.Add(paramCollection[i]);
-                    }
-                }
-                //executa a procedure e retorna um IdataReader
-                dbTransaction = dbConnection.BeginTransaction();
+        //        //Varre a coleção de parametros e adiciona no comand
+        //        if (paramCollection != null)
+        //        {
+        //            for (int i = 0; i < paramCollection.Count; i++)
+        //            {
+        //                dbCommand.Parameters.Add(paramCollection[i]);
+        //            }
+        //        }
+        //        //executa a procedure e retorna um IdataReader
+        //        dbTransaction = dbConnection.BeginTransaction();
 
-                int retorno = dbCommand.ExecuteNonQuery();
+        //        int retorno = dbCommand.ExecuteNonQuery();
 
-                if (Convert.ToBoolean(retorno))
-                    dbTransaction.Commit();
-                else
-                    dbTransaction.Rollback();
+        //        if (Convert.ToBoolean(retorno))
+        //            dbTransaction.Commit();
+        //        else
+        //            dbTransaction.Rollback();
 
 
-                return retorno;
-            }
-            finally
-            {
-                dbTransaction.Dispose();
-            }
-        }
+        //        return retorno;
+        //    }
+        //    finally
+        //    {
+        //        dbTransaction.Dispose();
+        //    }
+        //}
 
-        /// <summary>
-        /// Executa uma procedure do tipo Escalar e retorna um Tipo Escalar
-        /// </summary>
-        /// <param name="procName">Nome da procedure</param>
-        /// <param name="paramCollection">Coleção de parametros</param>
-        /// <returns><see cref="Objeto">Object</see></returns>
-        [CatchException]
-        public object ExecuteEscalarProcedure(string procName, List<IDataParameter> paramCollection)
-        {
-            try
-            {
-                //Cria o comando na fabrica
-                CriarComando(procName, CommandType.StoredProcedure);
+        ///// <summary>
+        ///// Executa uma procedure do tipo Escalar e retorna um Tipo Escalar
+        ///// </summary>
+        ///// <param name="procName">Nome da procedure</param>
+        ///// <param name="paramCollection">Coleção de parametros</param>
+        ///// <returns><see cref="Objeto">Object</see></returns>
+        //[CatchException]
+        //public object ExecuteEscalarProcedure(string procName, List<IDataParameter> paramCollection)
+        //{
+        //    try
+        //    {
+        //        //Cria o comando na fabrica
+        //        CriarComando(procName, CommandType.StoredProcedure);
 
-                //Varre a coleção de parametros e adiciona no comand
-                if (paramCollection != null)
-                {
-                    ConvertDataParameters(paramCollection);
-                    for (int i = 0; i < paramCollection.Count; i++)
-                    {
-                        dbCommand.Parameters.Add(paramCollection[i]);
-                    }
-                }
-                //executa a procedure e retorna um Escalar
-                return dbCommand.ExecuteScalar();
-            }
-            catch (Exception)
-            {
-                return null;
-            }
-            finally
-            {
-                CloseConnection();
-            }
-        }
+        //        //Varre a coleção de parametros e adiciona no comand
+        //        if (paramCollection != null)
+        //        {
+        //            ConvertDataParameters(paramCollection);
+        //            for (int i = 0; i < paramCollection.Count; i++)
+        //            {
+        //                dbCommand.Parameters.Add(paramCollection[i]);
+        //            }
+        //        }
+        //        //executa a procedure e retorna um Escalar
+        //        return dbCommand.ExecuteScalar();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return null;
+        //    }
+        //    finally
+        //    {
+        //        CloseConnection();
+        //    }
+        //}
 
-        /// <summary>
-        /// converte todos os parametros DateTime para string
-        /// </summary>
-        /// <param name="paramCollection"></param>
-        /// <returns></returns>
-        [CatchException]
-        public void ConvertDataParameters(List<IDataParameter> paramCollection)
-        {
-            foreach (IDataParameter param in paramCollection.Where(i => i.Value is DateTime))
-            {
-                Convert.ToString(param);
-            }
-        }
+        ///// <summary>
+        ///// converte todos os parametros DateTime para string
+        ///// </summary>
+        ///// <param name="paramCollection"></param>
+        ///// <returns></returns>
+        //[CatchException]
+        //public void ConvertDataParameters(List<IDataParameter> paramCollection)
+        //{
+        //    foreach (IDataParameter param in paramCollection.Where(i => i.Value is DateTime))
+        //    {
+        //        Convert.ToString(param);
+        //    }
+        //}
 
     }
 }

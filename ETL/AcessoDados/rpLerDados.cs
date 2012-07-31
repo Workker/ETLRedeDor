@@ -48,6 +48,19 @@ namespace AcessoDados
             //DB.Close();
             //DB.Dispose();
 
+            SqlConnection DB = new SqlConnection(DecriptaString(ConexaoOracle));
+            SqlCommand Cmd = new SqlCommand();
+
+            DB.Open();
+
+            Cmd.Connection = DB;
+            Cmd.CommandText = xQuery;
+
+            RetornoLinhas = Cmd.ExecuteNonQuery();
+
+            DB.Close();
+            DB.Dispose();
+
             return RetornoLinhas;
         }
 

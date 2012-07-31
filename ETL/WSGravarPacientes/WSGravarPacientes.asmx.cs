@@ -37,6 +37,7 @@ namespace WSGravarPacientes
         string m_sUnidade = string.Empty;
 
         [WebMethod]
+        [CatchException]
         public string RetornarUltimoRegistro(string str_Unidade)
         {
             string Resposta = string.Empty;
@@ -63,6 +64,7 @@ namespace WSGravarPacientes
         }
 
         [WebMethod]
+        [CatchException]
         public DataSet RetornarPacientes(string str_Unidade, string UltimoRegistro, Int32 NumeroLinhas)
         {
             DataSet Ds;
@@ -109,6 +111,7 @@ namespace WSGravarPacientes
         }
 
         [WebMethod]
+        [CatchException]
         public DataSet RetornarConciliacaoPacientes(string str_Unidade, Int32 NumeroLinhas)
         {
             DataSet Ds;
@@ -153,6 +156,7 @@ namespace WSGravarPacientes
         }
 
         [WebMethod]
+        [CatchException]
         public Boolean GravarPacientes(string m_strUnidade, DataSet m_oDsDados)
         {
 

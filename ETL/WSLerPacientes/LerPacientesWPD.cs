@@ -40,6 +40,7 @@ public class LerPacientesWPD : System.Web.Services.WebService
     }
 
     [WebMethod]
+    [CatchException]
     public string RetornarUltimoRegistro(string str_Unidade)
     {
         string Resposta = string.Empty;
@@ -69,6 +70,7 @@ public class LerPacientesWPD : System.Web.Services.WebService
     }
     
     [WebMethod]
+    [CatchException]
     public DataSet RetornarPacientes(string UltimoRegistro, Int32 NumeroLinhas, string strConnHIS, string strScheHIS)
     {
         DataSet Ds;
@@ -130,6 +132,7 @@ public class LerPacientesWPD : System.Web.Services.WebService
     }
 
     [WebMethod]
+    [CatchException]
     public DataSet RetornarPacientesConciliacao(String m_DataDe)
     {
         DataSet Ds;
@@ -155,6 +158,7 @@ public class LerPacientesWPD : System.Web.Services.WebService
     }
 
     [WebMethod]
+    [CatchException]
     public Boolean GravarPaciente(string m_strUnidade, DataSet m_oDsDados)
     {
         try

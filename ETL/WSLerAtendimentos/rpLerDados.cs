@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 
 
 namespace WSLerAtendimentos
@@ -25,6 +26,15 @@ namespace WSLerAtendimentos
 
             //dtAdp.Dispose();
 
+            SqlConnection DB = new SqlConnection(DecriptaString(ConexaoOracle));
+            SqlDataAdapter dtAdp = new SqlDataAdapter(xQuery, DB);
+            dtAdp.Fill(xDs, NomeTabela);
+
+            DB.Close();
+            DB.Dispose();
+
+            dtAdp.Dispose();
+
             return xDs;
         }
 
@@ -42,14 +52,28 @@ namespace WSLerAtendimentos
 
             //DB.Close();
             //DB.Dispose();
+            
+            SqlConnection DB = new SqlConnection(DecriptaString(ConexaoOracle));
+            SqlCommand Cmd = new SqlCommand();
+
+            DB.Open();
+
+            Cmd.Connection = DB;
+            Cmd.CommandText = xQuery;
+
+            Cmd.ExecuteNonQuery();
+
+            DB.Close();
+            DB.Dispose();
+
+            
 
             return true;
         }
 
         public string RetornarConsulta(string xQuery, string NomeTabela, string ConexaoOracle)
         {
-            string Resposta = "0";
-
+      
             //OracleConnection DB = new OracleConnection(DecriptaString(ConexaoOracle));
             //OracleCommand Cmd = new OracleCommand();
             //OracleDataReader Dre;
@@ -68,6 +92,29 @@ namespace WSLerAtendimentos
 
             //DB.Close();
             //DB.Dispose();
+
+            string Resposta = "0";
+
+            SqlConnection DB = new SqlConnection(DecriptaString(ConexaoOracle));
+            SqlCommand Cmd = new SqlCommand();
+            SqlDataReader Dre;
+            DB.Open();
+
+            Cmd.Connection = DB;
+            Cmd.CommandText = xQuery;
+            Dre = Cmd.ExecuteReader();
+
+            if (Dre.Read())
+            {
+                Resposta = Dre[0].ToString();
+            }
+
+            //Resposta = Cmd.ExecuteScalar(); //ANTIGO
+
+            DB.Close();
+            DB.Dispose();
+
+            return Resposta;
 
             return Resposta;
         }

@@ -53,6 +53,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\System.Data.OracleClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +63,15 @@
   <ItemGroup>
     <Compile Include="AcessoDados\EngineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicos\WSETLUnidadesTest.cs" />
+    <Compile Include="Servicos\WSGravarAtendimentoTest.cs" />
+    <Compile Include="Servicos\WSGravarPacientesTest.cs" />
+    <Compile Include="Servicos\WSLerAtendimentosTest.cs" />
+    <Compile Include="Servicos\WSLerEspecialidadesTest.cs" />
+    <Compile Include="Servicos\WSLerLeitosTest.cs" />
+    <Compile Include="Servicos\WSLerMedicoEspecialidadeTest.cs" />
+    <Compile Include="Servicos\WSLerMedicosTest.cs" />
+    <Compile Include="Servicos\WSLerPacientesTest.cs" />
     <Compile Include="TesteBase.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +83,42 @@
     <ProjectReference Include="..\AcessoDados\AcessoDados.csproj">
       <Project>{CDFCFB59-B19D-4BF0-9A1C-E47783AC3E74}</Project>
       <Name>AcessoDados</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WsETLUnidades\WSETLUnidades.csproj">
+      <Project>{198B7A48-5953-41CC-A61C-C181E4E64DF7}</Project>
+      <Name>WSETLUnidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSGravarAtendimento\WSGravarAtendimento.csproj">
+      <Project>{BEA92944-BBEE-4987-AD2A-848A25A7CA8A}</Project>
+      <Name>WSGravarAtendimento</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSGravarPacientes\WSGravarPacientes.csproj">
+      <Project>{FA48D235-CA34-43E2-AB3F-F099F292B71A}</Project>
+      <Name>WSGravarPacientes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSLerAtendimentos\WSLerAtendimentos.csproj">
+      <Project>{9D9C93E8-5CBD-41A5-844B-487FBC1B431D}</Project>
+      <Name>WSLerAtendimentos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSLerEspecialidades\WSLerEspecialidades.csproj">
+      <Project>{99E7301C-B348-4B66-BB0A-D19E56E0130C}</Project>
+      <Name>WSLerEspecialidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSLerLeitos\WSLerLeitos.csproj">
+      <Project>{A45BEAE0-113E-435E-BE8B-9D40264CA273}</Project>
+      <Name>WSLerLeitos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSLerMedicoEspecialidade\WSLerMedicoEspecialidade.csproj">
+      <Project>{0FD7B8E8-47E8-4C2E-9B11-09DF16A003A2}</Project>
+      <Name>WSLerMedicoEspecialidade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSLerMedicos\WSLerMedicos.csproj">
+      <Project>{9D3543F6-F571-4D46-A975-D74F1AC8A897}</Project>
+      <Name>WSLerMedicos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WSLerPacientes\WSLerPacientes.csproj">
+      <Project>{4E303165-BC69-4F23-AA48-4FBA737A2DE7}</Project>
+      <Name>WSLerPacientes</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -37,6 +37,7 @@ namespace WSGravarAtendimento
         DataSet m_oDataSet;
 
         [WebMethod]
+        [CatchException]
         public string RetornarUltimoRegistro(string str_Unidade)
         {
             string Resposta = string.Empty;
@@ -55,6 +56,7 @@ namespace WSGravarAtendimento
         }
 
         [WebMethod]
+        [CatchException]
         public DataSet RetornarAtendimentos(string str_Unidade, string UltimoRegistro, Int32 NumeroLinhas)
         {
             DataSet Ds;
@@ -89,6 +91,7 @@ namespace WSGravarAtendimento
         }
 
         [WebMethod]
+        [CatchException]
         public Boolean GravarAtendimento(string m_strUnidade, DataSet m_oDsDados)
         {
             Boolean Resposta = false;

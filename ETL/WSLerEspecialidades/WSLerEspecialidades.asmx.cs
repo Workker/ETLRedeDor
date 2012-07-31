@@ -29,6 +29,7 @@ namespace WSLerEspecialidades
         string strSche = ConfigurationManager.AppSettings["strSchema"].ToString();
 
         [WebMethod]
+        [CatchException]
         public DataSet RetornarEspecialidades()
         {
             DataSet Ds;

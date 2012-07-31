@@ -6,7 +6,8 @@ using System.Web;
 using System.Web.Services;
 using System.Configuration;
 using System.Text;
-using WSLerAtendimentos;  
+using WSLerAtendimentos;
+using AcessoDados;  
 
 
 namespace WSLerAtendimentos
@@ -41,6 +42,7 @@ namespace WSLerAtendimentos
         }
 
         [WebMethod]
+        [CatchException]
         public string RetornarUltimoRegistro(string str_Unidade)
         {
             string Resposta = string.Empty;
@@ -69,6 +71,7 @@ namespace WSLerAtendimentos
         }
 
         [WebMethod]
+        [CatchException]
         public DataSet RetornarAtendimentos(string UltimoRegistro, Int32 NumeroLinhas, string m_sConexao, string m_sSchema)
         {
             DataSet Ds;
@@ -123,6 +126,7 @@ namespace WSLerAtendimentos
         }
 
         [WebMethod]
+        [CatchException]
         public DataSet RetornarAtendimentoConciliacao(string m_DataDe, string m_sConexao, string m_sSchema)
         {
             DataSet Ds;
@@ -146,6 +150,7 @@ namespace WSLerAtendimentos
         }
 
         [WebMethod]
+        [CatchException]
         public Boolean GravarAtendimento(string m_strUnidade, DataSet m_oDsDados)
         {
             try
